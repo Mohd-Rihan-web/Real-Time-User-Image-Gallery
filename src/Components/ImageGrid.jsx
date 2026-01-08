@@ -63,7 +63,6 @@ function ImageGrid({ searchItem }) {
       newImages = response.data;
     }
 
-    // ✅ DEDUPLICATION YAHI PE
     setImages((prev) => {
       const existingIds = new Set(prev.map((img) => img.id));
 
@@ -80,7 +79,6 @@ function ImageGrid({ searchItem }) {
   }
 };
 
-  // 3️⃣ Infinite scroll (minimal change)
   useEffect(() => {
     if (loading) return;
 
@@ -109,14 +107,12 @@ function ImageGrid({ searchItem }) {
             ref={shouldObserve ? lastImageRef : null}
             className="mb-4 break-inside-avoid"
           >
-            <a href={img.urls.full}>
-              <img
+             <img
               src={img.urls.regular}
               alt={img.alt_description}
               loading="lazy"
               className="w-full rounded-xl"
-            />
-            </a>
+          />
             <div><PostButtons postId={img.id} image={img}/></div>
           </div>
         );

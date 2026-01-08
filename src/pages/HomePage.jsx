@@ -10,7 +10,7 @@ const [searchQuery, setSearchQuery] = useState("");
     <div>
       <SearchBar onSearch={setSearchQuery}/>
       <ImageGrid searchItem={searchQuery}/>
-        HomePage</div>
+    </div>
   )
 }
 
